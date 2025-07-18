@@ -1,0 +1,42 @@
+1: Hava Proqnozu Sistemi (OpenWeather API)
+✅ Texniki Tapşırıq
+Məqsəd: Verilmiş şəhər(lər) üzrə OpenWeather API-dən hava məlumatını çək,
+DB-də saxla və gündəlik məlumatları Excel faylına export et.
+
+Tapşırıq addımları:
+REST API yaz:
+
+POST /city — şəhər əlavə et (ad, ölkə kodu)
+
+GET /weather — DB-dən son hava məlumatlarını çək
+
+External API çağırışı:
+
+OpenWeather API vasitəsilə şəhər üzrə hava (temp, humidity, description) məlumatı al
+
+DB saxla:
+
+City (id, name, country)
+
+Weather (id, city_id, temperature, humidity, description, timestamp)
+
+Schedule:
+
+Hər 1 saatdan bir API çağırışı ilə yeni hava məlumatını çək
+
+Excel Export:
+
+GET /weather/export — seçilən şəhər üçün son 24 saatlıq hava məlumatını Excel faylı şəklində export et
+
+Texnologiyalar:
+Spring Boot
+
+URL: https://openweathermap.org/api
+Nə edir? Şəhər adı üzrə hava proqnozu verir.
+Tapşırıq:
+
+İstifadəçi şəhər adını daxil edir.
+
+API vasitəsilə həmin şəhər üçün hava məlumatları çəkilir.
+
+Temperatur, rütubət, hava təsviri (description) göstərilir.
