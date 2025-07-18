@@ -1,5 +1,6 @@
 package com.example.open_weather_api.model;
 
+import com.example.open_weather_api.model.dto.CityDTO;
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
@@ -11,26 +12,34 @@ import java.util.List;
 @Entity
 @Getter
 @Setter
+@Builder
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-@FieldDefaults(level = AccessLevel.PRIVATE)
 public class City {
 
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long id;
+    private Long id;
     @Column(nullable = false, unique = true)
-    String name;
+    private String name;
     @Column(nullable = false)
-    String country;
+    private String country;
 
     @OneToMany(mappedBy = "city", cascade = CascadeType.ALL, orphanRemoval = true)
     @JsonBackReference
-    List<Weather> weathers = new ArrayList<>();
+    private List<Weather> weathers = new ArrayList<>();
 
     public void addWeather(Weather weather){
         this.weathers.add(weather);
         weather.setCity(this);
+    }
+
+    public static CityDTO mapIntoDTO(City city){
+        return CityDTO.builder()
+                .id(city.getId())
+                .name(city.getName())
+                .country(city.getCountry())
+                .weathers(city.getWeathers()).build();
     }
 
 }

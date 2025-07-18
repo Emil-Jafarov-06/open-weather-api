@@ -10,6 +10,6 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Coord{
-    public double lon;
-    public double lat;
+    Double lon;
+    Double lat;
 }

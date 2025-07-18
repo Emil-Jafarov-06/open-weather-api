@@ -10,7 +10,7 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Wind{
-    public double speed;
-    public int deg;
-    public double gust;
+    Double speed;
+    Integer deg;
+    Double gust;
 }

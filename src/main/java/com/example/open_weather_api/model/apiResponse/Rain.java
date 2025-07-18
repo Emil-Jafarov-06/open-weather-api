@@ -12,5 +12,5 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Rain{
     @JsonProperty("1h")
-    public double _1h;
+    Double _1h;
 }

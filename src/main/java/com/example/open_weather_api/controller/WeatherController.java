@@ -2,8 +2,10 @@ package com.example.open_weather_api.controller;
 
 import com.example.open_weather_api.model.City;
 import com.example.open_weather_api.model.Weather;
+import com.example.open_weather_api.model.dto.CityDTO;
 import com.example.open_weather_api.model.request.CityRequest;
 import com.example.open_weather_api.service.WeatherService;
+import jakarta.validation.constraints.NotBlank;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -19,12 +21,12 @@ public class WeatherController {
     private final WeatherService weatherService;
 
     @PostMapping("/city")
-    public ResponseEntity<City> addCity(@RequestBody CityRequest cityRequest) {
+    public ResponseEntity<CityDTO> addCity(@RequestBody CityRequest cityRequest) {
         return ResponseEntity.ok(weatherService.addCity(cityRequest));
     }
 
     @GetMapping("/city/{cityName}")
-    public ResponseEntity<?> getLatestWeatherInfo(@PathVariable String cityName){
+    public ResponseEntity<?> getLatestWeatherInfo(@PathVariable @NotBlank String cityName){
         return ResponseEntity.ok(weatherService.getLatestInfo(cityName));
     }
 

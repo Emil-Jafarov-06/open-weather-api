@@ -7,4 +7,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create-drop
+      ddl-auto: update
+
+data:
+  api-key: 77d09da501b4123619e80ae0cee2f8ec&units=metric

@@ -10,12 +10,12 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Main{
-    public double temp;
-    public double feels_like;
-    public double temp_min;
-    public double temp_max;
-    public int pressure;
-    public int humidity;
-    public int sea_level;
-    public int grnd_level;
+    Double temp;
+    Double feels_like;
+    Double temp_min;
+    Double temp_max;
+    Integer pressure;
+    Integer humidity;
+    Integer sea_level;
+    Integer grnd_level;
 }

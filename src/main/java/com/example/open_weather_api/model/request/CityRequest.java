@@ -1,5 +1,6 @@
 package com.example.open_weather_api.model.request;
 
+import jakarta.validation.constraints.NotBlank;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -11,7 +12,9 @@ import lombok.experimental.FieldDefaults;
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class CityRequest {
 
+    @NotBlank
     String cityName;
+    @NotBlank
     String countryName;
 
 }

@@ -1,5 +1,6 @@
 package com.example.open_weather_api.model.apiResponse;
 
+import jakarta.persistence.criteria.CriteriaBuilder;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
@@ -10,9 +11,9 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Sys{
-    public int type;
-    public int id;
-    public String country;
-    public int sunrise;
-    public int sunset;
+    Integer type;
+    Integer id;
+    String country;
+    Integer sunrise;
+    Integer sunset;
 }

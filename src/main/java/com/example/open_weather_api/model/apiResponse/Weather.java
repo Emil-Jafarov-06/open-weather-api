@@ -10,8 +10,8 @@ import lombok.experimental.FieldDefaults;
 @AllArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
 public class Weather{
-    public int id;
-    public String main;
-    public String description;
-    public String icon;
+    Integer id;
+    String main;
+    String description;
+    String icon;
 }
